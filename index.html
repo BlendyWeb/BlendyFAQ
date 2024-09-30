@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Frequently Asked Questions - Blendy Products</title>
+ <style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+   
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #ffd700;
+    line-height: 1.3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    }
+   
+    .container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    }
+   
+    h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 36px;
+    }
+   
+    .category-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    }
+   
+    .category-button {
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: opacity 0.3s, transform 0.3s;
+    width: 100%;
+    }
+   
+    .category-button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+    }
+   
+    .category-button.active {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+   
+    .faq-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    }
+   
+    .faq-item {
+    margin-bottom: 20px;
+    display: none;
+    }
+   
+    .faq-question {
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 28px;
+    position: relative;
+    border-radius: 12px;
+    }
+   
+    .faq-question:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    }
+   
+    .faq-answer {
+    padding: 20px;
+    display: none;
+    font-size: 24px;
+    line-height: 1.4;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 12px 12px;
+    margin-top: 2px;
+    }
+   
+    .faq-question::after {
+    content: '\02795';
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+   
+    .faq-question.active::after {
+    content: "\2796";
+    }
+   
+    /* iPad Air (820 x 1180) */
+    @media (min-width: 820px) and (max-width: 1180px) {
+    body {
+    font-size: 24px;
+    }
+   
+    .container {
+    padding: 30px;
+    }
+   
+    h1 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    }
+   
+    .category-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    }
+   
+    .category-button {
+    width: calc(50% - 10px);
+    font-size: 36px;
+    padding: 25px;
+    }
+   
+    .faq-question {
+    font-size: 42px;
+    padding: 30px;
+    }
+   
+    .faq-answer {
+    font-size: 36px;
+    padding: 30px;
+    }
+   
+    .faq-question::after {
+    font-size: 36px;
+    right: 30px;
+    }
+    }
+    </style>
+</head>
+<body>
+ <div class="container">
+ <h1>Frequently Asked Questions</h1>
+ <div class="category-buttons">
+ <button class="category-button active" data-color="#3498db" data-category="before-party">Before Party</button>
+ <button class="category-button" data-color="#e74c3c" data-category="after-party">After Party</button>
+ <button class="category-button" data-color="#2ecc71" data-category="focus">Focus</button>
+ <button class="category-button" data-color="#9b59b6" data-category="collagen">Collagen</button>
+ <button class="category-button" data-color="#f39c12" data-category="power">Power</button>
+ 
+ </div>
+ <div class="faq-list">
+ <!-- Before Party Questions -->
+ <div class="faq-item" data-category="before-party">
+ <div class="faq-question">1. What is Blendy Before Party?</div>
+ <div class="faq-answer">Blendy Before Party is a liquid shot supplement designed to help the body prepare for social events and parties. Its formula contains B vitamins, natural extracts, and fruit juices to support well-being before engaging in intense activities.</div>
+ </div>
+ <div class="faq-item" data-category="before-party">
+ <div class="faq-question">2. When should I take Blendy Before Party?</div>
+ <div class="faq-answer">It is recommended to take Blendy Before Party about 30 minutes before attending parties or events where alcohol consumption or physical effort may be higher.</div>
+ </div>
+ <div class="faq-item" data-category="before-party">
+ <div class="faq-question">3. What are the main ingredients in Blendy Before Party?</div>
+ <div class="faq-answer">The main ingredients include vitamin B6, thiamine, riboflavin, niacin, folic acid, turmeric extract, and glucose, along with apple, orange, pineapple, and passion fruit juices.</div>
+ </div>
+ <div class="faq-item" data-category="before-party">
+ <div class="faq-question">4. Can I take Blendy Before Party daily?</div>
+ <div class="faq-answer">Yes, Blendy Before Party can be consumed daily, but it is advisable to consult a healthcare professional before adopting continuous use.</div>
+ </div>
+ <div class="faq-item" data-category="before-party">
+ <div class="faq-question">5. Does Blendy Before Party prevent hangovers?</div>
+ <div class="faq-answer">While Blendy Before Party contains ingredients that help maintain energy levels and well-being, it does not prevent hangovers. For that purpose, we recommend Blendy After Party.</div>
+ </div>
+ <div class="faq-item" data-category="before-party">
+ <div class="faq-question">6. Can I take Blendy Before Party if I am pregnant or breastfeeding?</div>
+ <div class="faq-answer">Blendy Before Party contains several vitamins and natural extracts, but if you are pregnant or breastfeeding, it is important to consult your doctor before taking this product.</div>
+ </div>
+
+ <!-- After Party Questions -->
+ <div class="faq-item" data-category="after-party">
+ <div class="faq-question">1. What is Blendy After Party?</div>
+ <div class="faq-answer">Blendy After Party is a liquid supplement designed to be consumed after parties and events, helping the body recover. It combines ingredients like potassium, activated charcoal, and B vitamins to assist recovery.</div>
+ </div>
+ <div class="faq-item" data-category="after-party">
+ <div class="faq-question">2. When should I take Blendy After Party?</div>
+ <div class="faq-answer">It is recommended to take Blendy After Party immediately after events where alcohol consumption or physical exertion occurred, to aid in recovery.</div>
+ </div>
+ <div class="faq-item" data-category="after-party">
+ <div class="faq-question">3. What are the benefits of Blendy After Party?</div>
+ <div class="faq-answer">Blendy After Party contains ingredients like activated charcoal, ginseng, and magnesium, which help detoxify the body, restore electrolyte levels, and promote a sense of well-being.</div>
+ </div>
+ <div class="faq-item" data-category="after-party">
+ <div class="faq-question">4. Does Blendy After Party cure hangovers?</div>
+ <div class="faq-answer">Blendy After Party is designed to support recovery after parties, but it is not a hangover cure. Its ingredients may help the body recover more quickly.</div>
+ </div>
+ <div class="faq-item" data-category="after-party">
+ <div class="faq-question">5. Can I take Blendy After Party if I don't drink alcohol?</div>
+ <div class="faq-answer">Yes! Blendy After Party can also be useful for physical recovery after exertion, even if no alcohol was consumed.</div>
+ </div>
+ <div class="faq-item" data-category="after-party">
+ <div class="faq-question">6. Can I take Blendy After Party if I am pregnant or breastfeeding?</div>
+ <div class="faq-answer">Blendy After Party contains activated charcoal, herbal extracts, and other ingredients that may not be recommended during pregnancy or breastfeeding. Please consult your healthcare provider before using this product.</div>
+ </div>
+
+ <!-- Focus Questions -->
+ <div class="faq-item" data-category="focus">
+ <div class="faq-question">1. What is Blendy Focus?</div>
+ <div class="faq-answer">Blendy Focus is a liquid shot supplement that combines B vitamins, herbal extracts, and caffeine to help improve focus, concentration, and mental performance.</div>
+ </div>
+ <div class="faq-item" data-category="focus">
+ <div class="faq-question">2. When should I take Blendy Focus?</div>
+ <div class="faq-answer">Blendy Focus should be taken whenever you need to enhance your concentration, such as before an important meeting, studying, or other mentally intense activities.</div>
+ </div>
+ <div class="faq-item" data-category="focus">
+ <div class="faq-question">3. What are the key ingredients in Blendy Focus?</div>
+ <div class="faq-answer">The key ingredients include thiamine, riboflavin, niacin, L-tyrosine, ginseng, L-theanine, green coffee extract, ginkgo extract, and apple juice.</div>
+ </div>
+ <div class="faq-item" data-category="focus">
+ <div class="faq-question">4. Does Blendy Focus contain caffeine?</div>
+ <div class="faq-answer">Yes, Blendy Focus contains caffeine from green coffee extract, which helps improve alertness and focus.</div>
+ </div>
+ <div class="faq-item" data-category="focus">
+ <div class="faq-question">5. Can I take Blendy Focus at night?</div>
+ <div class="faq-answer">It is recommended to consume Blendy Focus during the day, as the caffeine content may interfere with sleep if taken at night.</div>
+ </div>
+ <div class="faq-item" data-category="focus">
+ <div class="faq-question">6. Can I take Blendy Focus if I am pregnant or breastfeeding?</div>
+ <div class="faq-answer">Blendy Focus contains caffeine and herbal extracts that may not be suitable during pregnancy or breastfeeding. It's advisable to consult your doctor before using this supplement.</div>
+ </div>
+
+ <!-- Collagen Questions -->
+ <div class="faq-item" data-category="collagen">
+ <div class="faq-question">1. What is Blendy Collagen?</div>
+ <div class="faq-answer">Blendy Collagen is a liquid shot containing hydrolyzed fish collagen and vitamin C, designed to support skin, hair, and nail health.</div>
+ </div>
+ <div class="faq-item" data-category="collagen">
+ <div class="faq-question">2. When should I take Blendy Collagen?</div>
+ <div class="faq-answer">You can take Blendy Collagen daily, at any time of day, to promote skin and joint health.</div>
+ </div>
+ <div class="faq-item" data-category="collagen">
+ <div class="faq-question">3. What are the main ingredients in Blendy Collagen?</div>
+ <div class="faq-answer">Blendy Collagen contains hydrolyzed fish collagen, acerola extract (rich in vitamin C), and natural juices from apple and cranberry.</div>
+ </div>
+ <div class="faq-item" data-category="collagen">
+ <div class="faq-question">4. Is Blendy Collagen suitable for vegetarian diets?</div>
+ <div class="faq-answer">No, Blendy Collagen contains hydrolyzed fish collagen, so it is not suitable for vegetarians or vegans.</div>
+ </div>
+ <div class="faq-item" data-category="collagen">
+ <div class="faq-question">5. How long does it take to see results with Blendy Collagen?</div>
+ <div class="faq-answer">Results may vary, but many people notice improvements in their skin, hair, and nails after 4 to 8 weeks of continuous use.</div>
+ </div>
+ <div class="faq-item" data-category="collagen">
+ <div class="faq-question">6. Can I take Blendy Collagen if I am pregnant or breastfeeding?</div>
+ <div class="faq-answer">Blendy Collagen contains hydrolyzed fish collagen and vitamin C, which are generally considered safe. However, if you are pregnant or breastfeeding, it's best to seek medical advice before taking it.</div>
+ </div>
+ <!-- Power Questions -->
+ <div class="faq-item" data-category="power">
+    <div class="faq-question">1. What is Blendy Power?</div>
+    <div class="faq-answer">Blendy Power is a liquid shot supplement designed to boost energy levels and physical performance, thanks to a combination of ingredients like L-tyrosine, L-carnitine, and guarana extract.</div>
+    </div>
+    <div class="faq-item" data-category="power">
+    <div class="faq-question">2. When should I take Blendy Power?</div>
+    <div class="faq-answer">Take Blendy Power before physical activities, workouts, or whenever you need an extra energy boost.</div>
+    </div>
+    <div class="faq-item" data-category="power">
+    <div class="faq-question">3. What are the main ingredients in Blendy Power?</div>
+    <div class="faq-answer">The main ingredients include L-tyrosine, L-carnitine, guarana extract (containing caffeine), green coffee caffeine, ginseng, and natural juices from apple, orange, and passion fruit.</div>
+    </div>
+    <div class="faq-item" data-category="power">
+    <div class="faq-question">4. Is Blendy Power suitable for athletes?</div>
+    <div class="faq-answer">Yes, Blendy Power is an excellent option for athletes and active individuals who need an energy boost before training or competitions.</div>
+    </div>
+    <div class="faq-item" data-category="power">
+    <div class="faq-question">5. Can I combine Blendy Power with other Blendy products?</div>
+    <div class="faq-answer">Yes, you can combine Blendy Power with other Blendy products, but it's important to respect the recommended daily doses and consult a doctor if needed.</div>
+    </div>
+    <div class="faq-item" data-category="power">
+    <div class="faq-question">6. Can I take Blendy Power if I am pregnant or breastfeeding?</div>
+    <div class="faq-answer">Blendy Power contains caffeine and other stimulating ingredients that may not be suitable during pregnancy or breastfeeding. Please consult your healthcare provider before taking this product.</div>
+    </div>
+    </div> 
+    </div>
+
+   
+    <script>
+        const buttons = document.querySelectorAll('.category-button');
+        const faqItems = document.querySelectorAll('.faq-item');
+        const faqQuestions = document.querySelectorAll('.faq-question');
+       
+        function setActiveButton(activeButton) {
+        buttons.forEach(button => button.classList.remove('active'));
+        activeButton.classList.add('active');
+        }
+       
+        function setQuestionsColor(color) {
+        faqQuestions.forEach(question => {
+        question.style.backgroundColor = color;
+        });
+        }
+       
+        function showCategoryQuestions(category) {
+        faqItems.forEach(item => {
+        if (item.dataset.category === category) {
+        item.style.display = 'block';
+        } else {
+        item.style.display = 'none';
+        }
+        });
+        }
+       
+        buttons.forEach(button => {
+        const color = button.getAttribute('data-color');
+        const category = button.getAttribute('data-category');
+        button.style.backgroundColor = color;
+       
+        button.addEventListener('click', () => {
+        setActiveButton(button);
+        setQuestionsColor(color);
+        showCategoryQuestions(category);
+        });
+        });
+       
+        document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isOpen = answer.style.display === 'block';
+       
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(a => {
+        a.style.display = 'none';
+        });
+        document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+        });
+       
+        // Open the clicked answer if it was closed
+        if (!isOpen) {
+        answer.style.display = 'block';
+        question.classList.add('active');
+        }
+        });
+        });
+       
+        // Set initial state
+        const initialButton = document.querySelector('.category-button');
+        const initialColor = initialButton.getAttribute('data-color');
+        const initialCategory = initialButton.getAttribute('data-category');
+        setActiveButton(initialButton);
+        setQuestionsColor(initialColor);
+        showCategoryQuestions(initialCategory);
+        </script>
+   </body>
+   </html>
